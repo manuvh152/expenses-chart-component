@@ -1,0 +1,303 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+:root{
+  --bar-size-desktop: 3.5rem;
+  --bar-size-mobile: 2rem;
+  --fill-size-desktop: 2.5rem;
+  --fill-size-mobile: 2rem;
+  --font-color-spending-p: hsl(28, 10%, 53%);
+}
+
+@font-face {
+  font-family: 'DMSans';
+  src: url('assets/fonts/DMSans-VariableFont_opsz\,wght.ttf');
+}
+
+p{
+  font-size: 16px;
+  font-weight: 400;
+}
+
+h1{
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+h2{
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+hr{
+  border: none;
+  height: 1px;
+  background-color: hsl(28, 10%, 53%, 0.25);
+}
+
+body {
+  min-height: 100vh;
+  font-family: 'DMSans';
+  display: grid;
+  place-content: center;
+  padding: auto;
+  background-color: hsl(26, 66%, 93%);
+}
+
+.expenses{
+  display: grid;
+  gap: 1rem;
+  overflow: hidden;
+}
+
+.balance{
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem;
+  background-color: hsl(10, 79%, 65%);
+  border-radius: 1rem;
+  align-items: center;
+  color: white;
+}
+
+.balance img{
+  height: 40px;
+}
+
+.my-balance{
+  display: grid;
+  gap: 0.5rem;
+}
+
+.spending{
+  padding: 1.5rem;
+  padding-bottom: 2rem;
+  background-color: white;
+  color: hsl(25, 47%, 15%);
+  border-radius: 1rem;
+}
+
+.chart{
+  display: grid;
+  grid-auto-flow: column;
+  height: 13rem;
+  padding-bottom: 1rem;
+}
+
+.bar-grid{
+  display: grid;
+  grid-auto-flow: row;
+  justify-items: center;
+  place-content: end;
+  gap: 0.5rem;
+}
+
+.bar{
+  display: grid;
+  width: var(--bar-size-desktop);
+  height: 8rem;
+  justify-items: center;
+  align-self: center;
+  overflow: hidden;
+}
+
+.day{
+  color: var(--font-color-spending-p);
+}
+
+.fill{
+  width: var(--fill-size-desktop);
+  height: 100%;
+  border-radius: 0.3rem;
+  align-self: end;
+}
+
+.fill:hover{
+  filter: brightness(115%);
+}
+
+.monthly{
+  display: flex;
+  justify-content: space-between;
+  padding-top: 1rem;
+}
+
+.current-month{
+  display: grid;
+  gap: 0.5rem;
+}
+
+.last-month{
+  display: grid;
+  gap: 0.5rem;
+  justify-items: flex-end;
+  align-content: end;
+}
+
+.tooltip-container{
+  display: inline-block;
+  position: relative;
+}
+
+.tooltip{
+  width: 3.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+  background-color: hsl(25, 47%, 15%);
+  text-align: center;
+  color: white;
+  border-radius: 0.3rem;
+  position: absolute;
+  left: calc(50% - 32px);
+  opacity: 0;
+  z-index: 10;
+}
+
+.tooltip.open{
+  opacity: 1;
+}
+
+@media (max-width: 480px) {
+
+  .bar{
+    width: var(--bar-size-mobile);
+  }
+
+  .fill{
+    width: var(--fill-size-mobile);
+  }
+
+}
+
+.fw700{
+  font-weight: 700;
+}
